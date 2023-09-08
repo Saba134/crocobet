@@ -1,0 +1,90 @@
+body{
+    background-color: rgb(16,16,16);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-wraper{
+    background-color: rgb(98, 98, 98);
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title, .description{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.title{
+    font-size: 1.5vw;
+    margin: 5%;
+    padding: 2%;
+    border-radius: 7px;
+}
+
+.description{
+    font-size: 1vw;
+    padding: 10%;
+}
+
+.user-table{
+    width: 80%;
+    margin-top: 8%;
+    margin-inline: auto;
+}
+
+table{
+    color: white;
+    font-size: 1vw;
+    background-color: rgb(16,16,16);
+    width: 100%;
+    padding: 1rem;
+    border-collapse: collapse;
+    margin-bottom: 10%;
+}
+
+th,
+td{
+    border: 1px solid rgb(79, 112, 1);
+    padding: 1rem;
+    text-align: center;
+}
+
+th{
+    color: black;
+    font-weight: 700;
+    font-size: 1.1vw;
+    background: rgb(65,92,0);
+}
+
+tr:nth-last-of-type(odd){
+    background: rgb(29,36,10);
+}
+
+@media(max-width: 1024px){
+    .body-wraper{
+        width: 80%;
+    }
+    table{
+        font-size: 2vw;
+    }
+    th{
+        font-size: 2vw;
+    }
+    .title{
+        font-size: 2.8vw;
+    }
+    .description{
+        font-size: 1.8vw;
+    }
+}
