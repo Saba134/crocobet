@@ -16,47 +16,51 @@ function getUsers() {
         th.textContent = "მომხმარებლები"
         tr.appendChild(th)
 
-
         let tableSection = document.querySelector(".user-table").appendChild(table)
-        console.log(tr.length)
 
-        for (let i = 0; i < responseData.length; i++) {
+        for (var i = 0; i < 4; i++) {
+            var row = document.createElement("tr");
 
-            let tr = document.createElement('tr')
-            table.appendChild(tr)
-            for (let j = 0; j < 3; j++) {
-                let td = document.createElement('td')
-                td.setAttribute('class', j)
-                tr.appendChild(td)
-                td.textContent = responseData[j].name
+            for (var j = 0; j < 3; j++) {
+                var cell = document.createElement("td");
+
+                var index = i * 3 + j;
+                if (index < responseData.length) {
+                    cell.textContent = responseData[index].name;
+                    var btn = document.createElement('button')
+                    cell.appendChild(btn)
+                    btn.textContent = "დეტალურად"
+                    btn.classList.add('details-btn', [index])
+                } else {
+                    cell.textContent = "";
+                }
+                row.appendChild(cell);
+
             }
 
-
-
-            // let tr = document.createElement('tr')
-            // table.appendChild(tr)
-            // let td = document.createElement('td')
-            // tr.appendChild(td)
-            // td.textContent = responseData[i].name
-
-            // console.log(responseData[i].name)
+            table.appendChild(row);
         }
-        // for (let i = 0; i < responseData.length; i++) {
-        //     //Add the data row.
-        //     let row = table.insertRow(-1);
 
-        //     //Add the data cells.
-        //     cell = row.insertCell(-1);
-        //     cell.innerHTML = responseData[i].name;
-        // }
+        function renderPosts() {
+            let response = this.responseText;
+            let responseData = JSON.parse(response);
+            console.log(responseData);
+        }
+    
+        let requestPosts = new XMLHttpRequest();
+    
+        requestPosts.addEventListener('load', renderPosts);
+    
+        requestPosts.open('GET', 'https://jsonplaceholder.typicode.com/posts');
+        requestPosts.send();
     }
 
-    let request = new XMLHttpRequest();
+    let requestUsers = new XMLHttpRequest();
 
-    request.addEventListener('load', render);
+    requestUsers.addEventListener('load', render);
 
-    request.open('GET', 'https://jsonplaceholder.typicode.com/users');
-    request.send();
+    requestUsers.open('GET', 'https://jsonplaceholder.typicode.com/users');
+    requestUsers.send();
 
 }
 

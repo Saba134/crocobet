@@ -1,13 +1,13 @@
 body{
     background-color: rgb(16,16,16);
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .body-wraper{
-    background-color: rgb(98, 98, 98);
+    background-color: rgb(16,16,16);
     width: 50%;
     height: auto;
     margin: 0 auto;
@@ -22,7 +22,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid rgb(98, 98, 98);
 }
 
 .title{
@@ -30,11 +30,13 @@ body{
     margin: 5%;
     padding: 2%;
     border-radius: 7px;
+    color: rgb(209, 209, 209);
 }
 
 .description{
+    color: rgb(209, 209, 209);
     font-size: 1vw;
-    padding: 10%;
+    padding: 5% 10%;
 }
 
 .user-table{
@@ -44,7 +46,7 @@ body{
 }
 
 table{
-    color: white;
+    color: rgb(209, 209, 209);
     font-size: 1vw;
     background-color: rgb(16,16,16);
     width: 100%;
@@ -58,15 +60,36 @@ td{
     border: 1px solid rgb(79, 112, 1);
     padding: 1rem;
     text-align: center;
+    font-size: 0.8vw;
 }
+
 
 th{
     color: black;
     font-weight: 700;
     font-size: 1.1vw;
     background: rgb(65,92,0);
+    text-align: center;
 }
 
+
+.details-btn{
+    border-radius: 4px;
+    background-color: rgb(79, 112, 1);
+    color: rgb(209, 209, 209);
+    font-size: 0.8vw;
+    display: block;
+    width: 100%;
+    margin-top: 6%;
+    padding: 1.5%;
+    cursor: pointer;
+    border: 1px solid rgb(59, 84, 0);
+    transition: ease-in 0.15s ;
+}
+
+.details-btn:hover{
+    background-color: rgb(59, 84, 0);
+}
 tr:nth-last-of-type(odd){
     background: rgb(29,36,10);
 }
@@ -78,8 +101,9 @@ tr:nth-last-of-type(odd){
     table{
         font-size: 2vw;
     }
-    th{
-        font-size: 2vw;
+    th,
+    td{
+        font-size: 1.5vw;
     }
     .title{
         font-size: 2.8vw;
@@ -87,4 +111,27 @@ tr:nth-last-of-type(odd){
     .description{
         font-size: 1.8vw;
     }
+    .details-btn{
+        font-size: 1.4vw;
+    }
+}
+
+@media(max-width: 460px){
+    table{
+        font-size: 2vw;
+    }
+    th,
+    td{
+        font-size: 1.5vw;
+    }
+    .title{
+        font-size: 2.8vw;
+    }
+    .description{
+        font-size: 1.8vw;
+    }
+    .details-btn{
+        font-size: 1.4vw;
+    }
+
 }
