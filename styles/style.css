@@ -6,6 +6,15 @@ body{
     align-items: center;
 }
 
+h1{
+    color: white;
+}
+
+.olale{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+}
 .body-wraper{
     background-color: rgb(16,16,16);
     width: 50%;

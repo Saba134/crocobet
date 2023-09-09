@@ -1,7 +1,7 @@
 function getUsers() {
     function render() {
         let response = this.responseText;
-        let responseData = JSON.parse(response);
+        var responseData = JSON.parse(response);
         console.log(responseData);
 
         let table = document.createElement('table')
@@ -41,18 +41,33 @@ function getUsers() {
             table.appendChild(row);
         }
 
+        let buttons = document.querySelectorAll('.details-btn')
+            buttons.forEach((item) => {
+                item.addEventListener('click', function () {
+                    console.log(+item.className[12]+1)
+                    console.log(responseData[+item.className[12]].id)
+                    if (+item.className[12]+1 === responseData[+item.className[12]].id) {
+                        console.log('kaia')
+                        location.href = `accounts.html?userIndex=${+item.className[12]+1}`
+                    }
+                })
+            })
+
         function renderPosts() {
             let response = this.responseText;
-            let responseData = JSON.parse(response);
-            console.log(responseData);
+            let responseData2 = JSON.parse(response);
+            console.log(responseData2);
         }
-    
+
+
+
         let requestPosts = new XMLHttpRequest();
-    
+
         requestPosts.addEventListener('load', renderPosts);
-    
+
         requestPosts.open('GET', 'https://jsonplaceholder.typicode.com/posts');
         requestPosts.send();
+
     }
 
     let requestUsers = new XMLHttpRequest();
