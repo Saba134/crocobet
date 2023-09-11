@@ -12,6 +12,7 @@ function getUsers() {
         table.appendChild(tr)
 
         let th = document.createElement('th')
+        th.classList.add('users-table-header')
         th.setAttribute('colspan', '3')
         th.textContent = "მომხმარებლები"
         tr.appendChild(th)
@@ -23,10 +24,14 @@ function getUsers() {
 
             for (var j = 0; j < 3; j++) {
                 var cell = document.createElement("td");
+                cell.classList.add('table-cell')
+                const cellText = document.createElement('h3')
+                cellText.classList.add('names-h3')
+                cell.appendChild(cellText)
 
                 var index = i * 3 + j;
                 if (index < responseData.length) {
-                    cell.textContent = responseData[index].name;
+                    cellText.textContent = responseData[index].name;
                     var btn = document.createElement('button')
                     cell.appendChild(btn)
                     btn.textContent = "დეტალურად"
@@ -44,8 +49,6 @@ function getUsers() {
         let buttons = document.querySelectorAll('.details-btn')
         buttons.forEach((item) => {
             item.addEventListener('click', function () {
-                // console.log(+item.className[item.className.length - 1] + 1)
-                // console.log(responseData[+item.className[item.className.length - 1]].id)
                 location.href = `accounts.html?userIndex=${+item.className[item.className.length - 1] + 1}`
             })
         })

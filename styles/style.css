@@ -41,6 +41,12 @@ h1 {
     color: rgb(209, 209, 209);
     font-size: 1vw;
     padding: 5% 10%;
+    line-height: 120%;
+}
+
+.description span {
+    font-weight: 700;
+    color: rgb(116, 166, 0);
 }
 
 .user-table {
@@ -59,16 +65,16 @@ table {
     margin-bottom: 10%;
 }
 
-th,
-td {
+.users-table-header,
+.table-cell {
     border: 1px solid rgb(79, 112, 1);
-    padding: 1rem;
+    padding: 3.5%;
     text-align: center;
     font-size: 0.8vw;
 }
 
 
-th {
+.users-table-header {
     color: black;
     font-weight: 700;
     font-size: 1.1vw;
@@ -85,7 +91,7 @@ th {
     display: block;
     width: 100%;
     margin-top: 6%;
-    padding: 1.5%;
+    padding: 3%;
     cursor: pointer;
     border: 1px solid rgb(59, 84, 0);
     transition: ease-in 0.15s;
@@ -99,8 +105,6 @@ tr:nth-last-of-type(odd) {
     background: rgb(29, 36, 10);
 }
 
-
-
 .users-ul li {
     width: 100%;
     color: white;
@@ -110,8 +114,6 @@ tr:nth-last-of-type(odd) {
     height: 5.5vh;
     background: rgb(44, 55, 14);
 }
-
-
 
 .keySpan {
     display: flex;
@@ -181,23 +183,23 @@ li:nth-last-of-type(odd) {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     align-items: start;
     text-align: left;
     padding: 2%;
     border: 8px solid rgb(111, 159, 0);
-    
+
 }
 
-.cards-h2{
+.cards-h2 {
     text-transform: capitalize;
     width: 100%;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     border-bottom: 2px solid rgb(117, 190, 0);
     padding-bottom: 15%;
 }
-.cards-p{
-    font-size: 1.1vw;
+
+.cards-p {
+    font-size: 1rem;
     text-transform: capitalize;
     padding-top: 8%;
     line-height: 120%;
@@ -208,13 +210,17 @@ li:nth-last-of-type(odd) {
         width: 80%;
     }
 
-    table {
-        font-size: 2vw;
+    .info-container {
+        width: 80%;
+        font-size: 1.9vw;
     }
 
-    th,
-    td {
+    .table-cell {
         font-size: 1.5vw;
+    }
+
+    .users-table-header {
+        font-size: 1.8vw;
     }
 
     .title {
@@ -230,26 +236,81 @@ li:nth-last-of-type(odd) {
     }
 }
 
-@media(max-width: 460px) {
-    table {
-        font-size: 2vw;
+@media(max-width: 540px) {
+    .body-wraper {
+        width: 100%;
     }
 
-    th,
-    td {
-        font-size: 1.5vw;
+    .info-container {
+        width: 90%;
+        font-size: 3vw;
+    }
+
+    .cards-div{
+        padding: 6%;
+    }
+
+    .cards-h2{
+        font-size: 1.5rem;
+    }
+
+    .cards-p{
+        font-size: 1rem;
     }
 
     .title {
-        font-size: 2.8vw;
+        font-size: 3.5vw;
     }
 
     .description {
-        font-size: 1.8vw;
+        font-size: 2.5vw;
+    }
+
+    .users-table-header {
+        font-size: 2.8vw;
+    }
+
+    .table-cell {
+        font-size: 2.3vw;
     }
 
     .details-btn {
-        font-size: 1.4vw;
+        font-size: 2.2vw;
+    }
+}
+
+@media(max-width: 400px) {
+    .body-wraper {
+        width: 100%;
     }
 
+    .info-container {
+        width: 90%;
+        font-size: 4vw;
+    }
+
+    .keySpan {
+        width: 35%;
+    }
+
+    .valueSpan {
+        width: 65%;
+    }
+
+    .title {
+        font-size: 4vw;
+    }
+
+    .description {
+        font-size: 3vw;
+    }
+
+    .users-table-header,
+    .table-cell {
+        font-size: 3vw;
+    }
+
+    .details-btn {
+        font-size: 2.6vw;
+    }
 }
