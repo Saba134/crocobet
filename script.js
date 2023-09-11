@@ -44,12 +44,9 @@ function getUsers() {
         let buttons = document.querySelectorAll('.details-btn')
         buttons.forEach((item) => {
             item.addEventListener('click', function () {
-                console.log(+item.className[item.className.length - 1] + 1)
-                console.log(responseData[+item.className[item.className.length - 1]].id)
-                if (+item.className[item.className.length - 1] + 1 === responseData[+item.className[item.className.length - 1]].id) {
-                    console.log('kaia')
-                    location.href = `accounts.html?userIndex=${+item.className[item.className.length - 1] + 1}`
-                }
+                // console.log(+item.className[item.className.length - 1] + 1)
+                // console.log(responseData[+item.className[item.className.length - 1]].id)
+                location.href = `accounts.html?userIndex=${+item.className[item.className.length - 1] + 1}`
             })
         })
 

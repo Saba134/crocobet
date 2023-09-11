@@ -42,6 +42,17 @@ function getUsers() {
         }
         iterateObject(responseData[URLnumber - 1]);
 
+        const btnLi = document.createElement('li')
+        btnLi.classList.add('btn-li')
+        const postBtn = document.createElement('btn')
+        postBtn.textContent = 'მომხმარებლის პოსტები'
+        postBtn.classList.add('posts-btn')
+        postBtn.addEventListener('click', function () {
+            location.href = `posts.html?userIndex=${URLnumber}`
+        })
+        btnLi.appendChild(postBtn)
+        ul.appendChild(btnLi)
+
 
         container.appendChild(ul)
 
