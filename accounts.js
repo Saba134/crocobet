@@ -1,35 +1,3 @@
-// function getPosts() {
-//     function renderPosts() {
-//         let response = this.responseText;
-//         let responseData = JSON.parse(response);
-//         console.log(responseData);
-//     }
-//     let buttons = document.querySelectorAll('.details-btn')
-//     console.log(buttons)
-//     buttons.forEach((item) => {
-//         item.addEventListener('click', function () {
-//             location.href = 'accounts.html'
-//             console.log('lllaa')
-//             // setTimeout(() => {
-//             //     let body = document.querySelector('body')
-
-//             // }, '2000');
-
-//             // console.log(+item.className[12]+1)
-//         })
-//     })
-
-
-//     let requestPosts = new XMLHttpRequest();
-
-//     requestPosts.addEventListener('load', renderPosts);
-
-//     requestPosts.open('GET', 'https://jsonplaceholder.typicode.com/posts');
-//     requestPosts.send();
-// }
-
-// getPosts()
-
 function getUsers() {
     function render() {
         let response = this.responseText;
@@ -37,20 +5,45 @@ function getUsers() {
         console.log(responseData);
 
         const currentURL = window.location.href;
-        const URLnumber = currentURL[currentURL.length - 1]
+        const index = currentURL.indexOf('=');
+        const URLnumber = currentURL.slice(index + 1);
         console.log(URLnumber)
-
-        
 
         const container = document.querySelector(".info-container");
         const ul = document.createElement("ul");
+        ul.classList.add('users-ul')
 
-        // console.log(responseData[currentURL].id)
+        function iterateObject(obj, parentKey = "") {
+            for (const key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    const value = obj[key];
+                    const currentKey = parentKey ? `${parentKey}.${key}` : key;
 
-        for (i = 0; i < responseData.length; i++) {
-            // console.log(responseData[].name)
+                    if (typeof value === "object" && value !== null) {
+                        iterateObject(value, currentKey);
+                    } else {
+                        const index = currentKey.indexOf('.');
+                        const result = currentKey.slice(index + 1);
+                        const finalIndex = result.indexOf('.');
+                        const finalResult = result.slice(finalIndex + 1);
+                        const li = document.createElement('li')
+                        const keySpan = document.createElement('span')
+                        const valueSpan = document.createElement('span')
+                        keySpan.textContent = finalResult
+                        valueSpan.textContent = value
+                        keySpan.classList.add('keySpan')
+                        valueSpan.classList.add('valueSpan')
+                        li.appendChild(keySpan)
+                        li.appendChild(valueSpan)
+                        ul.appendChild(li)
+                    }
+                }
+            }
         }
-        container.appendChild
+        iterateObject(responseData[URLnumber - 1]);
+
+
+        container.appendChild(ul)
 
         console.log(responseData[2])
 

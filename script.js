@@ -16,7 +16,7 @@ function getUsers() {
         th.textContent = "მომხმარებლები"
         tr.appendChild(th)
 
-        let tableSection = document.querySelector(".user-table").appendChild(table)
+        document.querySelector(".user-table").appendChild(table)
 
         for (var i = 0; i < 4; i++) {
             var row = document.createElement("tr");
@@ -42,16 +42,16 @@ function getUsers() {
         }
 
         let buttons = document.querySelectorAll('.details-btn')
-            buttons.forEach((item) => {
-                item.addEventListener('click', function () {
-                    console.log(+item.className[12]+1)
-                    console.log(responseData[+item.className[12]].id)
-                    if (+item.className[12]+1 === responseData[+item.className[12]].id) {
-                        console.log('kaia')
-                        location.href = `accounts.html?userIndex=${+item.className[12]+1}`
-                    }
-                })
+        buttons.forEach((item) => {
+            item.addEventListener('click', function () {
+                console.log(+item.className[item.className.length - 1] + 1)
+                console.log(responseData[+item.className[item.className.length - 1]].id)
+                if (+item.className[item.className.length - 1] + 1 === responseData[+item.className[item.className.length - 1]].id) {
+                    console.log('kaia')
+                    location.href = `accounts.html?userIndex=${+item.className[item.className.length - 1] + 1}`
+                }
             })
+        })
 
         function renderPosts() {
             let response = this.responseText;
