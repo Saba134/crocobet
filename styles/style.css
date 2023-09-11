@@ -55,7 +55,7 @@ h1 {
     margin-inline: auto;
 }
 
-table {
+.table-wraper {
     color: rgb(209, 209, 209);
     font-size: 1vw;
     background-color: rgb(16, 16, 16);
@@ -246,15 +246,15 @@ li:nth-last-of-type(odd) {
         font-size: 3vw;
     }
 
-    .cards-div{
+    .cards-div {
         padding: 6%;
     }
 
-    .cards-h2{
+    .cards-h2 {
         font-size: 1.5rem;
     }
 
-    .cards-p{
+    .cards-p {
         font-size: 1rem;
     }
 

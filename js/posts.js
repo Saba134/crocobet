@@ -12,7 +12,7 @@ function getPosts() {
         const postsContainer = document.querySelector('.posts-container')
 
         responseData.forEach(element => {
-            if(element.userId == URLnumber){
+            if (element.userId == URLnumber) {
                 const cards = document.createElement('div')
                 const title = document.createElement('h2')
                 const post = document.createElement('p')

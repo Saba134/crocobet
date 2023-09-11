@@ -53,7 +53,6 @@ function getUsers() {
         btnLi.appendChild(postBtn)
         ul.appendChild(btnLi)
 
-
         container.appendChild(ul)
 
         console.log(responseData[2])

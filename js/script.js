@@ -5,7 +5,8 @@ function getUsers() {
         console.log(responseData);
 
         let table = document.createElement('table')
-        table.setAttribute('class', 'table-wraper')
+        
+        table.classList.add('table-wraper')
 
         let tr = document.createElement('tr')
 
